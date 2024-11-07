@@ -27,12 +27,12 @@ canvas {
 /* Imposta il colore del testo per la pagina Contatti */
 .container p {
     color: #ffffff; /* Colore del testo bianco per i paragrafi */
-    font-size: 12px; /* Diminuito la dimensione per i paragrafi */
+    font-size: 12px; /* Dimensione dei paragrafi */
 }
 
 .container h1 {
     color: #ffffff; /* Colore del titolo in bianco */
-    font-size: 18px; /* Diminuito la dimensione per il titolo */
+    font-size: 18px; /* Dimensione del titolo */
 }
 
 /* Contenitore principale */
@@ -53,13 +53,13 @@ canvas {
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 150px; /* Larghezza fissa per tutti i pulsanti, ridotto da 200px */
-    height: 40px; /* Altezza fissa per tutti i pulsanti, ridotto da 60px */
+    width: 150px; /* Larghezza fissa per tutti i pulsanti */
+    height: 40px; /* Altezza fissa per tutti i pulsanti */
     background-color: #ff7700; /* Colore di sfondo del pulsante */
     color: black; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
     border-radius: 5px; /* Angoli arrotondati */
-    font-size: 14px; /* Dimensione del font ridotto da 18px a 14px */
+    font-size: 14px; /* Dimensione del font */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizione per effetto hover */
     border: 2px solid transparent; /* Contorno trasparente */
 }
@@ -90,4 +90,21 @@ canvas {
 /* Separare l'icona dal testo */
 .button i {
     margin-right: 5px; /* Diminuito margine a destra per separare l'icona dal testo */
+}
+
+/* Media query per schermi più grandi (PC) */
+@media (min-width: 768px) {
+    .container p {
+        font-size: 16px; /* Dimensione del testo aumentata per i paragrafi su desktop */
+    }
+
+    .container h1 {
+        font-size: 24px; /* Dimensione del titolo aumentata per desktop */
+    }
+
+    .button {
+        width: 200px; /* Larghezza aumentata per desktop */
+        height: 50px; /* Altezza aumentata per desktop */
+        font-size: 18px; /* Dimensione del font aumentata per desktop */
+    }
 }
