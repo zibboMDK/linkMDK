@@ -6,8 +6,9 @@ body {
     justify-content: flex-start; /* Posizionamento all'inizio della pagina */
     min-height: 100vh; /* Altezza minima viewport */
     margin: 0; /* Rimozione margini */
-    padding-bottom: 60px; /* Aggiungi un padding in basso per lo spazio */
+    padding-bottom: 20px; /* Aggiungi un padding in basso per lo spazio */
     background: black; /* Sfondo nero per contrasto */
+    overflow-y: auto; /* Permetti lo scrolling verticale */
 }
 
 canvas {
