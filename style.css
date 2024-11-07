@@ -3,10 +3,10 @@ body {
     display: flex; /* Layout flessibile */
     flex-direction: column; /* Colonna per il layout */
     align-items: center; /* Centratura orizzontale */
-    justify-content: center; /* Centratura verticale */
-    height: 100vh; /* Altezza viewport */
+    justify-content: flex-start; /* Posizionamento all'inizio della pagina */
+    min-height: 100vh; /* Altezza minima viewport */
     margin: 0; /* Rimozione margini */
-    overflow: hidden; /* Rimuovere le barre di scorrimento */
+    padding-bottom: 60px; /* Aggiungi un padding in basso per lo spazio */
     background: black; /* Sfondo nero per contrasto */
 }
 
@@ -51,7 +51,8 @@ canvas {
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 200px; /* Larghezza fissa per tutti i pulsanti */
+    width: 90%; /* Larghezza percentuale per adattarsi al layout mobile */
+    max-width: 200px; /* Larghezza massima per i pulsanti */
     height: 60px; /* Altezza fissa per tutti i pulsanti */
     background-color: #ff7700; /* Colore di sfondo del pulsante */
     color: black; /* Colore del testo */
@@ -88,4 +89,16 @@ canvas {
 /* Separare l'icona dal testo */
 .button i {
     margin-right: 10px; /* Aggiunta di margine a destra per separare l'icona dal testo */
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 600px) {
+    .button {
+        height: 50px; /* Altezza più piccola per dispositivi mobili */
+        font-size: 16px; /* Dimensione del font più piccola per dispositivi mobili */
+    }
+
+    .container {
+        padding: 15px; /* Riduci il padding per dispositivi mobili */
+    }
 }
