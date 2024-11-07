@@ -1,20 +1,19 @@
-* {
-    box-sizing: border-box; /* Assicurati che il padding e il margin non influenzino la larghezza e l'altezza degli elementi */
-}
-
 body {
     font-family: Arial, sans-serif; /* Font utilizzato nella pagina */
     display: flex; /* Layout flessibile */
     flex-direction: column; /* Colonna per il layout */
     align-items: center; /* Centratura orizzontale */
     justify-content: flex-start; /* Posizionamento all'inizio della pagina */
+    min-height: 100vh; /* Altezza minima viewport */
     margin: 0; /* Rimozione margini */
+    padding-bottom: 20px; /* Aggiungi un padding in basso per lo spazio */
     background: black; /* Sfondo nero per contrasto */
-    overflow-y: auto; /* Permette lo scrolling verticale */
 }
 
 canvas {
-    position: relative; /* Cambia a relative per evitare problemi di altezza */
+    position: absolute; /* Posizionamento assoluto per il canvas */
+    top: 0;
+    left: 0;
     width: 100%; /* Larghezza canvas */
     height: 100%; /* Altezza canvas */
     z-index: 1; /* Assicura che il canvas sia sotto il contenuto */
@@ -28,12 +27,12 @@ canvas {
 /* Imposta il colore del testo per la pagina Contatti */
 .container p {
     color: #ffffff; /* Colore del testo bianco per i paragrafi */
-    font-size: 14px; /* Riduce la dimensione del testo */
+    font-size: 12px; /* Diminuito la dimensione per i paragrafi */
 }
 
 .container h1 {
     color: #ffffff; /* Colore del titolo in bianco */
-    font-size: 24px; /* Riduce la dimensione del titolo */
+    font-size: 18px; /* Diminuito la dimensione per il titolo */
 }
 
 /* Contenitore principale */
@@ -54,14 +53,13 @@ canvas {
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 90%; /* Larghezza percentuale per adattarsi al layout mobile */
-    max-width: 180px; /* Larghezza massima per i pulsanti */
-    height: 50px; /* Altezza ridotta per tutti i pulsanti */
+    width: 150px; /* Larghezza fissa per tutti i pulsanti, ridotto da 200px */
+    height: 40px; /* Altezza fissa per tutti i pulsanti, ridotto da 60px */
     background-color: #ff7700; /* Colore di sfondo del pulsante */
     color: black; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
     border-radius: 5px; /* Angoli arrotondati */
-    font-size: 16px; /* Dimensione del font ridotta */
+    font-size: 14px; /* Dimensione del font ridotto da 18px a 14px */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizione per effetto hover */
     border: 2px solid transparent; /* Contorno trasparente */
 }
@@ -91,17 +89,5 @@ canvas {
 
 /* Separare l'icona dal testo */
 .button i {
-    margin-right: 8px; /* Aggiunta di margine a destra per separare l'icona dal testo */
-}
-
-/* Media query per schermi più piccoli */
-@media (max-width: 600px) {
-    .button {
-        height: 40px; /* Altezza più piccola per dispositivi mobili */
-        font-size: 14px; /* Dimensione del font più piccola per dispositivi mobili */
-    }
-
-    .container {
-        padding: 15px; /* Riduci il padding per dispositivi mobili */
-    }
+    margin-right: 5px; /* Diminuito margine a destra per separare l'icona dal testo */
 }
