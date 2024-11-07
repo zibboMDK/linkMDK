@@ -95,7 +95,7 @@ canvas {
 /* Media query per schermi più grandi (PC) */
 @media (min-width: 768px) {
     .container p {
-        font-size: 16px; /* Dimensione del testo aumentata per i paragrafi su desktop */
+        font-size: 16px; /* Dimensioe del testo aumentata per i paragrafi su desktop */
     }
 
     .container h1 {
