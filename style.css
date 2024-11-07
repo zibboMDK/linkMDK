@@ -1,20 +1,20 @@
+* {
+    box-sizing: border-box; /* Assicurati che il padding e il margin non influenzino la larghezza e l'altezza degli elementi */
+}
+
 body {
     font-family: Arial, sans-serif; /* Font utilizzato nella pagina */
     display: flex; /* Layout flessibile */
     flex-direction: column; /* Colonna per il layout */
     align-items: center; /* Centratura orizzontale */
     justify-content: flex-start; /* Posizionamento all'inizio della pagina */
-    min-height: 100vh; /* Altezza minima viewport */
     margin: 0; /* Rimozione margini */
-    padding-bottom: 20px; /* Aggiungi un padding in basso per lo spazio */
     background: black; /* Sfondo nero per contrasto */
-    overflow-y: auto; /* Permetti lo scrolling verticale */
+    overflow-y: auto; /* Permette lo scrolling verticale */
 }
 
 canvas {
-    position: absolute; /* Posizionamento assoluto per il canvas */
-    top: 0;
-    left: 0;
+    position: relative; /* Cambia a relative per evitare problemi di altezza */
     width: 100%; /* Larghezza canvas */
     height: 100%; /* Altezza canvas */
     z-index: 1; /* Assicura che il canvas sia sotto il contenuto */
