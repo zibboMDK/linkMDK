@@ -11,6 +11,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Archivo+Black&family=Bebas+Neue&family=Bungee+Spice&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Icone di Font Awesome -->
+    <style>
+        #preview {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            max-height: 400px;
+        }
+        #progress-container {
+            display: none;
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-top: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px; /* Vertically center the text */
+            color: white;
+            transition: width 0.5s;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,6 +50,10 @@
                 <input type="file" id="file" class="file-input" accept="image/*" />
             </div>
             <button id="upload-button" class="upload-button" disabled>Carica</button>
+            <img id="preview" src="" alt="Anteprima" />
+            <div id="progress-container">
+                <div id="progress-bar">0%</div>
+            </div>
         </div>
     </div>
 
@@ -34,10 +63,12 @@
         const API_KEY = 'YOUR_API_KEY'; // Sostituisci con la tua API Key
         const SCOPES = 'https://www.googleapis.com/auth/drive.file';
 
+        // Carica l'API Client di Google
         function handleClientLoad() {
             gapi.load('client:auth2', initClient);
         }
 
+        // Inizializza il client di Google API
         function initClient() {
             gapi.client.init({
                 apiKey: API_KEY,
@@ -53,6 +84,7 @@
             });
         }
 
+        // Aggiorna lo stato di autenticazione
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
                 console.log("Utente autenticato.");
@@ -68,6 +100,7 @@
             }
         }
 
+        // Carica il file su Google Drive
         function uploadFile() {
             const file = document.getElementById('file').files[0];
             if (!file) {
@@ -85,10 +118,23 @@
             form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
             form.append('file', file);
 
+            // Mostra la barra di progresso
+            const progressContainer = document.getElementById('progress-container');
+            const progressBar = document.getElementById('progress-bar');
+            progressContainer.style.display = 'block';
+
             fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
                 method: 'POST',
                 headers: new Headers({ 'Authorization': 'Bearer ' + accessToken }),
                 body: form,
+                // Aggiungi un monitor del progresso
+                onUploadProgress: function (progressEvent) {
+                    if (progressEvent.lengthComputable) {
+                        const percentComplete = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+                        progressBar.style.width = percentComplete + '%';
+                        progressBar.textContent = percentComplete + '%';
+                    }
+                }
             }).then(response => {
                 if (!response.ok) {
                     throw new Error('Errore nel caricamento: ' + response.statusText);
@@ -97,9 +143,20 @@
             }).then(file => {
                 console.log('File ID:', file.id);
                 alert('File caricato con successo! ID: ' + file.id);
+                progressBar.style.width = '100%';
+                progressBar.textContent = '100%';
+                setTimeout(() => {
+                    progressContainer.style.display = 'none'; // Nascondi la barra di progresso dopo alcuni secondi
+                }, 2000);
+
+                // Mostra l'anteprima
+                const previewImage = document.getElementById('preview');
+                previewImage.src = URL.createObjectURL(file);
+                previewImage.style.display = 'block';
             }).catch(error => {
                 console.error('Error:', error);
                 alert('Errore nel caricamento del file: ' + error.message);
+                progressContainer.style.display = 'none';
             });
         }
 
@@ -125,6 +182,11 @@
             // Abilita il pulsante di caricamento dopo il drag & drop
             if (files.length > 0) {
                 document.getElementById('upload-button').disabled = false;
+
+                // Mostra l'anteprima
+                const previewImage = document.getElementById('preview');
+                previewImage.src = URL.createObjectURL(files[0]);
+                previewImage.style.display = 'block';
             }
         });
 
