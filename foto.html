@@ -19,12 +19,12 @@
         <h1 class="sedgwick-ave-display-regular">Carica un file su Google Drive</h1>
 
         <div class="upload-section">
-            <p class="upload-instruction">Gentilmente, condividi solo foto. Per i video, contattaci su Instagram.</p>
+            <p class="upload-instruction">Gentilmente, condividi solo foto inerenti ai nostri eventi. Per condividere i tuoi video, contattaci tramite uno dei canali ufficiali.</p>
             <div id="drop-area" class="drop-area">
                 <p>Trascina e rilascia il file qui o clicca per selezionarlo.</p>
-                <input type="file" id="file" class="file-input" />
+                <input type="file" id="file" class="file-input" accept="image/*" />
             </div>
-            <button id="upload-button" class="upload-button">Carica</button>
+            <button id="upload-button" class="upload-button" disabled>Carica</button>
         </div>
     </div>
 
@@ -47,6 +47,7 @@
             }).then(() => {
                 gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
                 updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                console.log("Client initialized and authentication state monitored.");
             }, (error) => {
                 console.error(JSON.stringify(error, null, 2));
             });
@@ -54,9 +55,16 @@
 
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
-                document.getElementById('upload-button').onclick = uploadFile;
+                console.log("Utente autenticato.");
+                document.getElementById('upload-button').disabled = false; // Abilita il pulsante
+                document.getElementById('upload-button').onclick = uploadFile; // Assegna la funzione di upload
             } else {
-                gapi.auth2.getAuthInstance().signIn();
+                console.log("Utente non autenticato, richiedere login.");
+                gapi.auth2.getAuthInstance().signIn().then(() => {
+                    updateSigninStatus(true);
+                }).catch((error) => {
+                    alert('Errore nell\'autenticazione: ' + error.message);
+                });
             }
         }
 
@@ -81,12 +89,15 @@
                 method: 'POST',
                 headers: new Headers({ 'Authorization': 'Bearer ' + accessToken }),
                 body: form,
-            }).then((response) => {
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Errore nel caricamento: ' + response.statusText);
+                }
                 return response.json();
-            }).then((file) => {
+            }).then(file => {
                 console.log('File ID:', file.id);
                 alert('File caricato con successo! ID: ' + file.id);
-            }).catch((error) => {
+            }).catch(error => {
                 console.error('Error:', error);
                 alert('Errore nel caricamento del file: ' + error.message);
             });
@@ -107,8 +118,14 @@
         dropArea.addEventListener('drop', (event) => {
             event.preventDefault();
             dropArea.classList.remove('drag-over');
-            const files = event.dataTransfer.files;
+            const dt = event.dataTransfer;
+            const files = dt.files;
             document.getElementById('file').files = files;
+
+            // Abilita il pulsante di caricamento dopo il drag & drop
+            if (files.length > 0) {
+                document.getElementById('upload-button').disabled = false;
+            }
         });
 
         dropArea.addEventListener('click', () => {
