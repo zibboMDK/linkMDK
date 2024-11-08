@@ -57,7 +57,7 @@ canvas {
     border: 2px dashed #4b9cd3; /* Bordo tratteggiato */
     border-radius: 10px; /* Angoli arrotondati */
     padding: 20px; /* Padding interno */
-    margin: 20px 0; /* Margini verticale */
+    margin: 20px 0; /* Margini verticali */
     cursor: pointer; /* Icona del cursore */
     transition: background-color 0.3s; /* Transizione per effetto hover */
     color: #4b9cd3; 
@@ -68,22 +68,37 @@ canvas {
     background-color: rgba(75, 156, 211, 0.1); /* Colore di sfondo al passaggio del mouse */
 }
 
-/* Pulsanti */
-.button {
+/* Pulsanti modernizzati */
+.upload-button,
+.file-input {
     font-family: "Archivo Black", sans-serif;
     display: inline-flex; /* Layout flessibile per le icone e il testo */
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 150px; /* Larghezza fissa per tutti i pulsanti */
-    height: 40px; /* Altezza fissa per tutti i pulsanti */
-    background-color: #ff7700; /* Colore di sfondo del pulsante */
-    color: black; /* Colore del testo */
+    padding: 12px 24px; /* Padding interno */
+    background-color: #4b9cd3; /* Colore di sfondo standard */
+    color: white; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
     border-radius: 5px; /* Angoli arrotondati */
-    font-size: 14px; /* Dimensione del font */
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizione per effetto hover */
-    border: 2px solid transparent; /* Contorno trasparente */
+    font-size: 16px; /* Dimensione del font */
+    border: none; /* Rimozione del bordo */
+    cursor: pointer; /* Cursore puntatore */
+    transition: background-color 0.3s, transform 0.2s; /* Transizione per effetto hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
+    outline: none; /* Rimozione outline */
+}
+
+/* Effetti hover e focus */
+.upload-button:hover,
+.file-input:hover {
+    background-color: #337ab7; /* Colore di sfondo al passaggio del mouse */
+    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+}
+
+/* Nascondere l'input di file */
+.file-input {
+    display: none; /* Nasconde il file input */
 }
 
 /* Pulsanti di Instagram */
@@ -124,6 +139,7 @@ canvas {
         font-size: 24px; /* Dimensione del titolo aumentata per desktop */
     }
 
+    .upload-button,
     .button {
         width: 200px; /* Larghezza aumentata per desktop */
         height: 50px; /* Altezza aumentata per desktop */
