@@ -32,7 +32,8 @@ canvas {
 
 .container h1 {
     color: #ffffff; /* Colore del titolo in bianco */
-    font-size: 18px; /* Dimensione del titolo */
+    font-size: 20px; /* Aumento della dimensione del titolo */
+    margin-top: 20px; /* Aggiunta di margine superiore per aumentare la distanza dal bordo superiore */
 }
 
 /* Contenitore principale */
@@ -44,28 +45,6 @@ canvas {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
     position: relative; /* Posizionamento relativo */
     z-index: 2; /* Assicura che il contenuto sia sopra il canvas */
-}
-
-/* Sezione Upload */
-.upload-section {
-    width: 100%; /* Larghezza massima */
-    margin-top: 20px; /* Margine superiore */
-}
-
-/* Area Drag & Drop */
-.drop-area {
-    border: 2px dashed #4b9cd3; /* Bordo tratteggiato */
-    border-radius: 10px; /* Angoli arrotondati */
-    padding: 20px; /* Padding interno */
-    margin: 20px 0; /* Margini verticale */
-    cursor: pointer; /* Icona del cursore */
-    transition: background-color 0.3s; /* Transizione per effetto hover */
-    color: #4b9cd3; 
-}
-
-/* Hover effect sulla drop-area */
-.drop-area:hover {
-    background-color: rgba(75, 156, 211, 0.1); /* Colore di sfondo al passaggio del mouse */
 }
 
 /* Pulsanti */
