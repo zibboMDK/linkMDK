@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif; /* Font utilizzato nella pagina */
+    display: flex; /* Layout flessibile */
+    flex-direction: column; /* Colonna per il layout */
+    align-items: center; /* Centratura orizzontale */
+    justify-content: flex-start; /* Posizionamento all'inizio della pagina */
+    min-height: 100vh; /* Altezza minima viewport */
+    margin: 0; /* Rimozione margini */
+    padding-bottom: 20px; /* Aggiungi un padding in basso per lo spazio */
+    background: black; /* Sfondo nero per contrasto */
+}
+
+canvas {
+    position: absolute; /* Posizionamento assoluto per il canvas */
+    top: 0;
+    left: 0;
+    width: 100%; /* Larghezza canvas */
+    height: 100%; /* Altezza canvas */
+    z-index: 1; /* Assicura che il canvas sia sotto il contenuto */
+}
+
+/* Stili per i font */
+.sedgwick-ave-display-regular, .bungee-spice-regular {
+    color: #ffffff; /* Colore del testo */
+}
+
+/* Imposta il colore del testo per la pagina Contatti */
+.container p {
+    color: #ffffff; /* Colore del testo bianco per i paragrafi */
+    font-size: 14px; /* Dimensione dei paragrafi */
+}
+
+.container h1 {
+    color: #ffffff; /* Colore del titolo in bianco */
+    font-size: 20px; /* Aumento della dimensione del titolo */
+    margin-top: 20px; /* Aggiunta di margine superiore per aumentare la distanza dal bordo superiore */
+}
+
+/* Contenitore principale */
+.container {
+    text-align: center; /* Testo centrato */
+    background: rgba(255, 255, 255, 0); /* Sfondo bianco semi-trasparente */
+    padding: 20px; /*Padding interno */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
+    position: relative; /* Posizionamento relativo */
+    z-index: 2; /* Assicura che il contenuto sia sopra il canvas */
+}
+
+/* Pulsanti */
+.button {
+    font-family: "Archivo Black", sans-serif;
+    display: inline-flex; /* Layout flessibile per le icone e il testo */
+    align-items: center; /* Allineamento centrale */
+    justify-content: center; /* Allineamento centrale */
+    margin: 10px; /* Margine */
+    width: 150px; /* Larghezza fissa per tutti i pulsanti */
+    height: 55px; /* Altezza fissa per tutti i pulsanti */
+    color: black; /* Colore del testo */
+    text-decoration: none; /* Rimozione della sottolineatura */
+    border-radius: 25px; /* Angoli arrotondati */
+    font-size: 14px; /* Dimensione del font */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizione per effetto hover */
+    border: 2px solid transparent; /* Contorno trasparente */
+}
+
+.contacts-button {
+    background:linear-gradient(45deg, #00bdbd, #0becca) ;
+}
+
+.contact-button:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
+}
+
+.contacts-button:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
+}
+
+
+/* Separare l'icona dal testo */
+.button i {
+    margin-right: 5px; /* Diminuito margine a destra per separare l'icona dal testo */
+}
+
+/* .section {
+
+} */
+
+.main-container {
+    background-color: #51515143;
+    border-radius: 15px;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.biofont {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+}
+.image-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 150px; /* Aggiusta la larghezza come necessario */
+    height: 200px; /* Altezza fissa per il carosello */
+    border-radius: 15px; /* Bordo arrotondato */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
+}
+
+.image2-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 150px; /* Aggiusta la larghezza come necessario */
+    height: 200px; /* Altezza fissa per il carosello */
+    border-radius: 15px; /* Bordo arrotondato */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%; /* Immagini adattate alla larghezza del contenitore */
+    height: 100%; /* Immagini adattate all'altezza del contenitore */
+    border-radius: 15px; /* Bordo arrotondato per le immagini */
+    object-fit: cover; /* Oggetto adatta per coprire l'area */
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per la leggibilità */
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* Inizialmente invisibile */
+    transition: opacity 0.5s ease; /* Velocità di transizione per le didascalie */
+}
+
+.foto-container {
+    padding: 25px;
+}
+/* Media query per schermi più grandi (PC) */
+@media (min-width: 768px) {
+    .container p {
+        font-size: 20px; /* Dimensione del testo aumentata per i paragrafi su desktop */
+    }
+
+    .container h1 {
+        font-size: 24px; /* Dimensione del titolo aumentata per desktop */
+    }
+
+    .button {
+        width: 200px; /* Larghezza aumentata per desktop */
+        height: 50px; /* Altezza aumentata per desktop */
+        font-size: 18px; /* Dimensione del font aumentata per desktop */
+    }
+    .main-container {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-container {
+        margin-left: 250px;
+        margin-right: 250px;
+    }
+}

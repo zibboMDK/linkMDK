@@ -55,42 +55,75 @@ canvas {
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
     width: 150px; /* Larghezza fissa per tutti i pulsanti */
-    height: 40px; /* Altezza fissa per tutti i pulsanti */
-    background-color: #ff7700; /* Colore di sfondo del pulsante */
+    height: 55px; /* Altezza fissa per tutti i pulsanti */
     color: black; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
-    border-radius: 5px; /* Angoli arrotondati */
+    border-radius: 25px; /* Angoli arrotondati */
     font-size: 14px; /* Dimensione del font */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizione per effetto hover */
     border: 2px solid transparent; /* Contorno trasparente */
 }
+.button.soundcloud{
+    background:linear-gradient(45deg, #ff7700, #ffdd00) ;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: transform 0.2s;
 
+}
 /* Pulsanti di Instagram */
-.button.instagram {
-    background-color: violet; /* Colore viola per i bottoni di Instagram */
+.button.instagram{
+    background: linear-gradient(45deg, #ff8800, #dd00ff);
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Pulsanti al passaggio del mouse */
-.button:hover,
+.button.soundcloud:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+}
+
 .button.instagram:hover {
-    color: white; /* Colore del testo al passaggio del mouse */
-    background-color: #0000004b; /* Colore di sfondo al passaggio del mouse */
+    color: rgb(255, 255, 255); /* Colore del testo al passaggio del mouse */
+    background-color: #000000;
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
     border-color: white; /* Contorno bianco al passaggio del mouse */
 }
-
 /* Pulsante di contatto con colore diverso */
 .contact-button {
-    background-color: #28a745; /* Colore diverso per il pulsante di contatto */
+    background:linear-gradient(45deg, #00ff11, #147f14) ;
+}
+
+.contacts-button {
+    background:linear-gradient(45deg, #00bdbd, #0becca) ;
 }
 
 .contact-button:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
 
+.contacts-button:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
+}
+
+
 /* Separare l'icona dal testo */
 .button i {
     margin-right: 5px; /* Diminuito margine a destra per separare l'icona dal testo */
+}
+
+.section {
+    padding-top: 35px;
+}
+
+.main-container {
+    display: flex;
 }
 
 /* Media query per schermi più grandi (PC) */

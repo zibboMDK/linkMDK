@@ -122,3 +122,16 @@ window.addEventListener('resize', () => {
 
 // Inizializza l'animazione
 drawStars();
+
+const carousel = document.querySelector('.image-carousel');
+const items = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+function nextItem() {
+    items[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % items.length;
+    items[currentIndex].classList.add('active');
+}
+
+setInterval(nextItem, 3000);
+items[0].classList.add('active');
