@@ -167,7 +167,7 @@ canvas {
     position: relative;
     overflow: hidden;
     width: 150px; /* Aggiusta la larghezza come necessario */
-    height: 200px; /* Altezza fissa per il carosello */
+    height: 225px; /* Altezza fissa per il carosello */
     border-radius: 15px; /* Bordo arrotondato */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
 }
@@ -175,7 +175,7 @@ canvas {
 .image2-carousel {
     position: relative;
     overflow: hidden;
-    width: 300px; /* Aggiusta la larghezza come necessario */
+    width: 275px; /* Aggiusta la larghezza come necessario */
     height: 200px; /* Altezza fissa per il carosello */
     border-radius: 15px; /* Bordo arrotondato */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
