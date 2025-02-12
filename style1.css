@@ -14,10 +14,12 @@ body {
 
 canvas {
     position: absolute; /* Posizionamento assoluto per il canvas */
+    display: block;
+    ;
     top: 0;
     left: 0;
-    width: 100%; /* Larghezza canvas */
-    height: 100%; /* Altezza canvas */
+    width: 250vw; /* Larghezza canvas */
+    height: 250vh; /* Altezza canvas */
     z-index: 1; /* Assicura che il canvas sia sotto il contenuto */
 }
 
