@@ -6,6 +6,8 @@ body {
     justify-content: flex-start; /* Posizionamento all'inizio della pagina */
     min-height: 100vh; /* Altezza minima viewport */
     margin: 0; /* Rimozione margini */
+    padding: 0;
+    box-sizing: border-box;
     padding-bottom: 20px; /* Aggiungi un padding in basso per lo spazio */
     background: black; /* Sfondo nero per contrasto */
 }
@@ -40,6 +42,9 @@ canvas {
 .container {
     text-align: center; /* Testo centrato */
     background: rgba(255, 255, 255, 0); /* Sfondo bianco semi-trasparente */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px; /*Padding interno */
     border-radius: 10px; /* Angoli arrotondati */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
@@ -220,3 +225,5 @@ canvas {
         margin-right: 350px;
     }
 }
+
+

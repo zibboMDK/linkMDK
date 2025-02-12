@@ -98,27 +98,27 @@ function drawStars() {
 }
 
 // Assicurati che il canvas si ridimensioni con la finestra
-// window.addEventListener('resize', () => {
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-//     stars = []; // Resetta le stelle
-//     const numberOfStars = Math.floor((canvas.width + canvas.height) / 15); // Recalcola le stelle
-//     // Rivedere il processo di creazione delle stelle
-//     while (stars.length < numberOfStars) {
-//         const newStar = {
-//             x: Math.random() * canvas.width,
-//             y: Math.random() * canvas.height,
-//             radius: Math.random() * 2 + 0.5,
-//             brightness: Math.random() < 0.3 ? Math.random() * 4 + 1 : Math.random() * 2 + 0.5, // Luminosità
-//             speed: Math.random() * 0.1 + 0.05,
-//             direction: Math.random() * 2 * Math.PI
-//         };
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = []; // Resetta le stelle
+    const numberOfStars = Math.floor((canvas.width + canvas.height) / 15); // Recalcola le stelle
+    // Rivedere il processo di creazione delle stelle
+    while (stars.length < numberOfStars) {
+        const newStar = {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 2 + 0.5,
+            brightness: Math.random() < 0.3 ? Math.random() * 4 + 1 : Math.random() * 2 + 0.5, // Luminosità
+            speed: Math.random() * 0.1 + 0.05,
+            direction: Math.random() * 2 * Math.PI
+        };
 
-//         if (!isTooClose(newStar)) {
-//             stars.push(newStar);
-//         }
-//     }
-// });
+        if (!isTooClose(newStar)) {
+            stars.push(newStar);
+        }
+    }
+});
 
 // Inizializza l'animazione
 drawStars();
