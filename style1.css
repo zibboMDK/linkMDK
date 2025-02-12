@@ -14,8 +14,8 @@ canvas {
     position: absolute; /* Posizionamento assoluto per il canvas */
     top: 0;
     left: 0;
-    width: 200%; /* Larghezza canvas */
-    height: 200%; /* Altezza canvas */
+    width: 100%; /* Larghezza canvas */
+    height: 100%; /* Altezza canvas */
     z-index: 1; /* Assicura che il canvas sia sotto il contenuto */
 }
 
@@ -97,16 +97,16 @@ canvas {
     margin: 10px;
     padding: 10px;
 }
-
-.main-container1 { 
+.main-container1 {
     background-color: #51515143;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     padding: 10px;
 }
-
 .button-container {
     display: flex;
     flex-direction: column;
@@ -124,6 +124,10 @@ canvas {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
 }
+.biografia {
+    padding-left: 25px;
+    padding-right: 25px;
+}
 .image-carousel {
     position: relative;
     overflow: hidden;
@@ -136,7 +140,7 @@ canvas {
 .image2-carousel {
     position: relative;
     overflow: hidden;
-    width: 400px; /* Aggiusta la larghezza come necessario */
+    width: 350px; /* Aggiusta la larghezza come necessario */
     height: 200px; /* Altezza fissa per il carosello */
     border-radius: 15px; /* Bordo arrotondato */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
@@ -183,10 +187,8 @@ canvas {
 
 .foto-container {
     padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
 /* Media query per schermi più grandi (PC) */
 @media (min-width: 768px) {
     .container p {
@@ -206,30 +208,15 @@ canvas {
         margin-left: 150px;
         margin-right: 150px;
     }
-    .main-container1 {
-        margin-left: 150px;
-        margin-right: 150px;
-    }
 }
 
 @media (min-width: 992px) {
     .main-container {
-        margin-left: 250px;
-        margin-right: 250px;
+        margin-left: 350px;
+        margin-right: 350px;
     }
     .main-container1 {
-        margin-left: 250px;
-        margin-right: 250px;
+        margin-left: 350px;
+        margin-right: 350px;
     }
 }
-
-/* @media (min-width: 329px) {
-    .main-container {
-        margin-left: 85px;
-        margin-right: 85px;
-    }
-    .main-container1 {
-        margin-left: 85px;
-        margin-right: 85px;
-    }
-} */
