@@ -59,7 +59,7 @@ canvas {
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 300px; /* Larghezza fissa per tutti i pulsanti */
+    width: 225px; /* Larghezza fissa per tutti i pulsanti */
     height: 55px; /* Altezza fissa per tutti i pulsanti */
     color: black; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
@@ -78,25 +78,25 @@ canvas {
 }
 
 .contact-button:hover {
-    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    transform: scale(1.1); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
 
 .contact-button1:hover {
-    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    transform: scale(1.1); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
 
 
 .contacts-button:hover {
-    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    transform: scale(1.1); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
 .contacts-button1:hover {
-    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    transform: scale(1.1); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
@@ -122,6 +122,10 @@ canvas {
     margin: 10px;
     padding: 10px;
 }
+.main-container:hover {
+    background-color: #3535354c;
+    transform: scale(1.01);
+}
 .main-container2 {
     background-color: #51515143;
     border-radius: 15px;
@@ -132,6 +136,10 @@ canvas {
     margin: 10px;
     padding: 10px;
 }
+.main-container2:hover {
+    background-color: #3535354c;
+    transform: scale(1.01);
+}
 .main-container1 {
     background-color: #51515143;
     border-radius: 15px;
@@ -141,6 +149,10 @@ canvas {
     align-items: center;
     margin: 10px;
     padding: 10px;
+}
+.main-container1:hover {
+    background-color: #3535354c;
+    transform: scale(1.01);
 }
 .button-container {
     display: flex;
