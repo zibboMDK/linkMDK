@@ -59,7 +59,7 @@ canvas {
     align-items: center; /* Allineamento centrale */
     justify-content: center; /* Allineamento centrale */
     margin: 10px; /* Margine */
-    width: 150px; /* Larghezza fissa per tutti i pulsanti */
+    width: 300px; /* Larghezza fissa per tutti i pulsanti */
     height: 55px; /* Altezza fissa per tutti i pulsanti */
     color: black; /* Colore del testo */
     text-decoration: none; /* Rimozione della sottolineatura */
@@ -73,17 +73,34 @@ canvas {
     background:linear-gradient(45deg, #00bdbd, #0becca) ;
 }
 
+.contacts-button1 {
+    background:linear-gradient(45deg, #ed0202, #ff6308) ;
+}
+
 .contact-button:hover {
     transform: scale(1.2); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
 
+.contact-button1:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
+}
+
+
 .contacts-button:hover {
     transform: scale(1.2); /* Aumenta la dimensione al 110% */
     background-color: #000000; /* Colore di sfondo al passaggio del mouse */
     color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
 }
+.contacts-button1:hover {
+    transform: scale(1.2); /* Aumenta la dimensione al 110% */
+    background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+    color: white; /* Colore del testo al passaggio del mouse per il pulsante di contatto */
+}
+
 
 
 /* Separare l'icona dal testo */
@@ -96,6 +113,16 @@ canvas {
 } */
 
 .main-container {
+    background-color: #51515143;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+.main-container2 {
     background-color: #51515143;
     border-radius: 15px;
     display: flex;
@@ -213,17 +240,13 @@ canvas {
         margin-left: 150px;
         margin-right: 150px;
     }
-}
-
-@media (min-width: 992px) {
-    .main-container {
-        margin-left: 350px;
-        margin-right: 350px;
-    }
     .main-container1 {
-        margin-left: 350px;
-        margin-right: 350px;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    .main-container2 {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
-
 
