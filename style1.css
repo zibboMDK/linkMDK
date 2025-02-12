@@ -126,6 +126,9 @@ canvas {
     background-color: #51515143;
     border-radius: 15px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     padding: 10px;
 }
@@ -172,7 +175,7 @@ canvas {
 .image2-carousel {
     position: relative;
     overflow: hidden;
-    width: 350px; /* Aggiusta la larghezza come necessario */
+    width: 300px; /* Aggiusta la larghezza come necessario */
     height: 200px; /* Altezza fissa per il carosello */
     border-radius: 15px; /* Bordo arrotondato */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombra */
