@@ -72,66 +72,66 @@ function drawStars() {
     const maxLines = Math.floor(numberOfStars / 3); // Numero massimo di linee
     const drawnLines = new Set(); // Usato per evitare linee duplicate
 
-    stars.forEach((star, i) => {
-        for (let j = i + 1; j < stars.length; j++) {
-            const dx = star.x - stars[j].x;
-            const dy = star.y - stars[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+    // stars.forEach((star, i) => {
+    //     for (let j = i + 1; j < stars.length; j++) {
+    //         const dx = star.x - stars[j].x;
+    //         const dy = star.y - stars[j].y;
+    //         const distance = Math.sqrt(dx * dx + dy * dy);
 
-            // Disegna una linea se la distanza è inferiore a un certo valore e il numero di linee è inferiore al massimo
-            if (distance < 150 && drawnLines.size < maxLines) {
-                drawnLines.add(`${i}-${j}`); // Aggiungi una identificazione unica per la linea
-                ctx.beginPath();
-                ctx.moveTo(star.x, star.y);
-                ctx.lineTo(stars[j].x, stars[j].y);
+    //         // Disegna una linea se la distanza è inferiore a un certo valore e il numero di linee è inferiore al massimo
+    //         if (distance < 150 && drawnLines.size < maxLines) {
+    //             drawnLines.add(`${i}-${j}`); // Aggiungi una identificazione unica per la linea
+    //             ctx.beginPath();
+    //             ctx.moveTo(star.x, star.y);
+    //             ctx.lineTo(stars[j].x, stars[j].y);
                 
-                // Alterna i colori delle linee tra rosso e celeste
-                ctx.strokeStyle = (i % 2 === 0) ? 'rgba(150, 0, 0, 0.8)' : 'rgba(0, 150, 150, 0.8)';
+    //             // Alterna i colori delle linee tra rosso e celeste
+    //             ctx.strokeStyle = (i % 2 === 0) ? 'rgba(150, 0, 0, 0.8)' : 'rgba(0, 150, 150, 0.8)';
                 
-                ctx.lineWidth = 1;
-                ctx.stroke();
-            }
-        }
-    });
+    //             ctx.lineWidth = 1;
+    //             ctx.stroke();
+    //         }
+    //     }
+    // });
 
     requestAnimationFrame(drawStars);
 }
 
 // Assicurati che il canvas si ridimensioni con la finestra
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    stars = []; // Resetta le stelle
-    const numberOfStars = Math.floor((canvas.width + canvas.height) / 15); // Recalcola le stelle
-    // Rivedere il processo di creazione delle stelle
-    while (stars.length < numberOfStars) {
-        const newStar = {
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 2 + 0.5,
-            brightness: Math.random() < 0.3 ? Math.random() * 4 + 1 : Math.random() * 2 + 0.5, // Luminosità
-            speed: Math.random() * 0.1 + 0.05,
-            direction: Math.random() * 2 * Math.PI
-        };
+// window.addEventListener('resize', () => {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+//     stars = []; // Resetta le stelle
+//     const numberOfStars = Math.floor((canvas.width + canvas.height) / 15); // Recalcola le stelle
+//     // Rivedere il processo di creazione delle stelle
+//     while (stars.length < numberOfStars) {
+//         const newStar = {
+//             x: Math.random() * canvas.width,
+//             y: Math.random() * canvas.height,
+//             radius: Math.random() * 2 + 0.5,
+//             brightness: Math.random() < 0.3 ? Math.random() * 4 + 1 : Math.random() * 2 + 0.5, // Luminosità
+//             speed: Math.random() * 0.1 + 0.05,
+//             direction: Math.random() * 2 * Math.PI
+//         };
 
-        if (!isTooClose(newStar)) {
-            stars.push(newStar);
-        }
-    }
-});
+//         if (!isTooClose(newStar)) {
+//             stars.push(newStar);
+//         }
+//     }
+// });
 
 // Inizializza l'animazione
 drawStars();
 
-const carousel = document.querySelector('.image-carousel');
-const items = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
+// const carousel = document.querySelector('.image-carousel');
+// const items = document.querySelectorAll('.carousel-item');
+// let currentIndex = 0;
 
-function nextItem() {
-    items[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % items.length;
-    items[currentIndex].classList.add('active');
-}
+// function nextItem() {
+//     items[currentIndex].classList.remove('active');
+//     currentIndex = (currentIndex + 1) % items.length;
+//     items[currentIndex].classList.add('active');
+// }
 
-setInterval(nextItem, 3000);
-items[0].classList.add('active');
+// setInterval(nextItem, 3000);
+// items[0].classList.add('active');
